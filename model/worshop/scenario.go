@@ -106,15 +106,9 @@ func (a *AddonData) PrintScenarios() {
 
 func (a *AddonData) PrintScenariosCompact() {
 	for _, scenario := range a.Props.PageProps.Asset.Scenarios {
-
-		name := scenario.Name
-		// if len(scenario.Name) > 42 {
-		// 	name = strings.Join([]string{scenario.Name[:41], "..."}, "")
-		// }
-
 		fmt.Printf("│ %-4v │ %-50s │ %-80s │ %-40s │ %-40s\n",
 			scenario.PlayerCount,
-			name,
+			scenario.Name,
 			scenario.ScenarioID,
 			a.Props.PageProps.Asset.Name,
 			scenario.AuthorName,
