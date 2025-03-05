@@ -36,8 +36,7 @@ type Scenario struct {
 }
 
 type PageProps struct {
-	Asset     Asset      `json:"asset"`
-	Scenarios []Scenario `json:"scenarios"`
+	Asset Asset `json:"asset"`
 }
 
 type AddonData struct {
@@ -75,6 +74,10 @@ func GetAddonsDataFromWorkshop(url string) (AddonData, error) {
 	}
 
 	return data, nil
+}
+
+func (a *AddonData) GetCountMissions() int {
+	return len(a.Props.PageProps.Asset.Scenarios)
 }
 
 func (a *AddonData) PrintInfo() {
