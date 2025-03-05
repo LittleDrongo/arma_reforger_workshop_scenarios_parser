@@ -21,8 +21,6 @@ func quickPrintSample(url string) {
 		log.Fatalf("err: %v", err)
 	}
 	addon.PrintScenariosCompact()
-	fmt.Println("Всего миссий: ", addon.GetCountMissions())
-	fmt.Println()
 }
 
 func printMissionsSample(url string) {
